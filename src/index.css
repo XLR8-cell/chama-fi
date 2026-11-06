@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light: cool lavender paper, indigo ink. Statuses use blue and orange, which stay distinct for colour-blind users. */
+:root {
+  --ink: 27 23 64; --paper: 246 245 251; --surface: 255 255 255; --deep: 30 27 75;
+  --brand: 91 75 219; --onbrand: 255 255 255; --gold: 242 169 59; --danger: 194 65 12;
+  color-scheme: light;
+}
+/* Dark: velvet purple-blue. */
+:root[data-theme='dark'] {
+  --ink: 236 233 251; --paper: 14 10 31; --surface: 25 19 47; --deep: 37 29 74;
+  --brand: 168 156 255; --onbrand: 14 10 31; --gold: 245 194 107; --danger: 255 138 91;
+  color-scheme: dark;
+}
+
+body { @apply bg-paper font-sans text-ink antialiased; }
+:focus-visible { @apply outline-2 outline-offset-2 outline-brand; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
